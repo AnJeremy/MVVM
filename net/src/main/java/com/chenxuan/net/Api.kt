@@ -1,7 +1,6 @@
 package com.chenxuan.net
 
 import android.content.Context
-import com.chenxuan.common.utils.common.LogUtils
 import com.orhanobut.logger.Logger
 import okhttp3.Cache
 import okhttp3.Interceptor
@@ -71,7 +70,7 @@ class Api private constructor() {
         if (request.body != null) {
             request.body!!.writeTo(requestBuffer)
         } else {
-            LogUtils.d("request.body() == null")
+            Logger.d("request.body() == null")
         }
         //打印url信息
         val response = it.proceed(request)

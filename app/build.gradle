@@ -33,7 +33,6 @@ kapt {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation project(path: ':common')
     implementation project(path: ':net')
     kapt root_dependencies.arouter_compiler
     if (isLoginModule.toBoolean()) {
