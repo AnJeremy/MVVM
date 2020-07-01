@@ -1,5 +1,7 @@
 package com.chenxuan.net;
 
+import com.chenxuan.common.base.BaseResponse;
+import com.chenxuan.common.base.BaseResponseCode;
 import com.google.gson.Gson;
 import com.google.gson.TypeAdapter;
 
@@ -24,10 +26,10 @@ final class CxResponseBodyConverter<T> implements Converter<ResponseBody, T> {
     @Override
     public T convert(ResponseBody value) throws IOException {
         String response = value.string();
-        BasicResponse basicResponse = gson.fromJson(response, BasicResponse.class);
-        if (basicResponse.getErrorCode() != BasicResponseCode.SUCCESS) {
+        BaseResponse baseResponse = gson.fromJson(response, BaseResponse.class);
+        if (baseResponse.getErrorCode() != BaseResponseCode.SUCCESS) {
             value.close();
-            throw new ApiException(basicResponse.getErrorCode(), basicResponse.getErrorMsg());
+            throw new ApiException(baseResponse.getErrorCode(), baseResponse.getErrorMsg());
         }
         try {
             return adapter.fromJson(response);

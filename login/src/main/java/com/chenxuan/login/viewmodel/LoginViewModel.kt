@@ -16,9 +16,8 @@ class LoginViewModel : BaseViewModel<LoginRepository>() {
     }
 
     fun getChapters() {
-        launch {
-            val json = Gson().toJson(repository.getChapters())
-            contentLiveData.value = json
+        launch(netBlock = { repository.getChapters() }) {
+            contentLiveData.value = Gson().toJson(it.data)
         }
     }
 }

@@ -1,9 +1,9 @@
-package com.chenxuan.net
+package com.chenxuan.common.base
 
 /**
  * @author cx
  */
-interface BasicResponseCode {
+interface BaseResponseCode {
 
     companion object {
         /**

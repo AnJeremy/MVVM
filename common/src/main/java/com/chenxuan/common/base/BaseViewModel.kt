@@ -27,7 +27,12 @@ abstract class BaseViewModel<T : BaseRepository> : ViewModel() {
         MutableLiveData<CoroutineState>()
     }
 
-    fun launch(refresh: Boolean = true, block: Block) {
+    fun <T> launch(
+        refresh: Boolean = true,
+        netBlock: NetBlock<T>,
+        error: Error? = null,
+        success: Success<T>
+    ) {
         viewModelScope.launch {
             try {
                 if (refresh) {
@@ -35,11 +40,10 @@ abstract class BaseViewModel<T : BaseRepository> : ViewModel() {
                 } else {
                     statusLiveData.value = CoroutineState.START
                 }
-                block()
+                success(netBlock())
                 statusLiveData.value = CoroutineState.FINISH
             } catch (e: Exception) {
-                statusLiveData.value = CoroutineState.ERROR
-                //处理协程异常
+                if (error == null) statusLiveData.value = CoroutineState.ERROR else error(e)
             }
         }
     }

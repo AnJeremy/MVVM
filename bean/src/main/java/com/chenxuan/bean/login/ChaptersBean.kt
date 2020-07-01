@@ -4,12 +4,6 @@ package com.chenxuan.bean.login
  * @author cx
  */
 data class Chapters(
-    val `data`: List<Data>,
-    val errorCode: Int,
-    val errorMsg: String
-)
-
-data class Data(
     val children: List<Any>,
     val courseId: Int,
     val id: Int,
