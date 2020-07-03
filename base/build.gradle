@@ -35,6 +35,9 @@ dependencies {
     api root_dependencies.androidx_core
     api root_dependencies.annotation
     api root_dependencies.appcompat
+    api root_dependencies.viewmodel
+    api root_dependencies.livedata
+    api root_dependencies.lifecycle
     api root_dependencies.constraintlayout
     api root_dependencies.retrofit
     api root_dependencies.converter_gson
@@ -51,14 +54,10 @@ dependencies {
     api root_dependencies.immersionbar
     api root_dependencies.immersionbar_fragment
     api root_dependencies.immersionbar_ktx
-    api root_dependencies.RecyclerViewAdapter
+    api root_dependencies.recyclerview_adapter
     api root_dependencies.permissions
     api root_dependencies.matisse
     api root_dependencies.eventbus
     api root_dependencies.multidex
-    api root_dependencies.lifecycle
     api root_dependencies.zxing
-    api root_dependencies.viewmodel
-    api root_dependencies.livedata
-    api root_dependencies.lifecycle
 }
