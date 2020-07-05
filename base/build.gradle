@@ -39,6 +39,8 @@ dependencies {
     api root_dependencies.livedata
     api root_dependencies.lifecycle
     api root_dependencies.constraintlayout
+    api root_dependencies.recycleview
+    api root_dependencies.material
     api root_dependencies.retrofit
     api root_dependencies.converter_gson
     api root_dependencies.gson
