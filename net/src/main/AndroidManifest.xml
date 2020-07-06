@@ -3,5 +3,9 @@
 
     <application android:allowBackup="true">
 
+        <provider
+            android:name=".NetContentProvider"
+            android:authorities="${applicationId}.init_net"
+            android:exported="false" />
     </application>
 </manifest>
