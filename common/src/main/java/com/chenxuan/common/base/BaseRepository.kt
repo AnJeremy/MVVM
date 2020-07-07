@@ -1,4 +1,6 @@
 package com.chenxuan.common.base
 
-abstract class BaseRepository {
-}
+/**
+ * @author cx
+ */
+abstract class BaseRepository

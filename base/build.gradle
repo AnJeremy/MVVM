@@ -45,6 +45,7 @@ dependencies {
     api root_dependencies.converter_gson
     api root_dependencies.gson
     api root_dependencies.logging_interceptor
+    api root_dependencies.live_event_bus
     api root_dependencies.utilcodex
     api root_dependencies.arouter
     kapt root_dependencies.arouter_compiler
@@ -59,7 +60,7 @@ dependencies {
     api root_dependencies.recyclerview_adapter
     api root_dependencies.permissions
     api root_dependencies.matisse
-    api root_dependencies.eventbus
+    debugApi root_dependencies.leakcanary
     api root_dependencies.multidex
     api root_dependencies.zxing
 }

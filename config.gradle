@@ -21,6 +21,7 @@ ext {
             converter_gson      : '2.9.0',
             gson                : '2.8.6',
             logging_interceptor : '4.7.2',
+            live_event_bus      : '1.7.2',
             utilcodex           : '1.25.9',
             arouter             : '1.5.0',
             arouter_compiler    : '1.2.2',
@@ -34,8 +35,7 @@ ext {
             permissions         : '2.0.3',
             matisse             : '0.5.2-beta3',
             eventbus            : '3.1.1',
-            leakcanary          : '2.0-alpha-2',
-            leaksentry          : '2.0-alpha-2',
+            leakcanary          : '2.4',
             multidex            : '1.0.3',
             zxing               : '2.1.6'
     ]
@@ -55,6 +55,8 @@ ext {
             converter_gson       : "com.squareup.retrofit2:converter-gson:$versions.converter_gson",
             gson                 : "com.google.code.gson:gson:$versions.gson",
             logging_interceptor  : "com.squareup.okhttp3:logging-interceptor:$versions.logging_interceptor",
+            //https://github.com/JeremyLiao/LiveEventBus
+            live_event_bus       : "com.jeremyliao:live-event-bus-x:$versions.live_event_bus",
             //https://github.com/Blankj/AndroidUtilCode
             utilcodex            : "com.blankj:utilcodex:$versions.utilcodex",
             //https://github.com/alibaba/ARouter/blob/master/README_CN.md
@@ -79,11 +81,8 @@ ext {
             permissions          : "com.yanzhenjie:permission:$versions.permissions",
             //https://github.com/zhihu/Matisse
             matisse              : "com.zhihu.android:matisse:$versions.matisse",
-            //https://github.com/greenrobot/EventBus
-            eventbus             : "org.greenrobot:eventbus:$versions.eventbus",
-            //https://github.com/square/leakcanary/wiki/Migrating-to-LeakCanary-2.0
+            //https://github.com/square/leakcanary
             leakcanary           : "com.squareup.leakcanary:leakcanary-android:$versions.leakcanary",
-            leaksentry           : "com.squareup.leakcanary:leaksentry:$versions.leaksentry",
             //65536分包
             multidex             : "com.android.support:multidex:$versions.multidex",
             //https://github.com/mylhyl/Android-Zxing
