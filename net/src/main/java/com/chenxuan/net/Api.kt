@@ -27,17 +27,15 @@ class Api private constructor() {
     }
 
     lateinit var retrofit: Retrofit
-    private lateinit var okHttpClient: OkHttpClient
 
     fun init(context: Context) {
-        initOkHttpClient(context)
-        initRetrofit()
+        initRetrofit(initOkHttpClient(context))
     }
 
     /**
      * 初始化Retrofit
      */
-    private fun initRetrofit() {
+    private fun initRetrofit(okHttpClient: OkHttpClient) {
         retrofit = Retrofit.Builder()
             .client(okHttpClient)
             .baseUrl(HOST)
@@ -48,11 +46,11 @@ class Api private constructor() {
     /**
      * 初始化OkHttp
      */
-    private fun initOkHttpClient(context: Context) {
+    private fun initOkHttpClient(context: Context): OkHttpClient {
         val cache = Cache(File(CacheUtils.getCacheDir(context), "HttpCache"), 1024 * 1024 * 80)
         val interceptor = HttpLoggingInterceptor()
         interceptor.level = HttpLoggingInterceptor.Level.BODY
-        okHttpClient = OkHttpClient.Builder()
+        return OkHttpClient.Builder()
             .cache(cache)
             .retryOnConnectionFailure(true)
             .addInterceptor(interceptor)
