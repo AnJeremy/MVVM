@@ -19,7 +19,7 @@ abstract class BaseViewModel<T : BaseRepository> : ViewModel() {
      * 协程状态管理
      *
      * 开始 CoroutineState.START
-     * 刷新 CoroutineState.START
+     * 刷新 CoroutineState.REFRESH
      * 结束 CoroutineState.FINISH
      * 异常 CoroutineState.ERROR
      */
