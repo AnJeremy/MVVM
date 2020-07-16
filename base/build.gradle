@@ -33,7 +33,6 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     api root_dependencies.kotlin
     api root_dependencies.androidx_core
-    api root_dependencies.annotation
     api root_dependencies.appcompat
     api root_dependencies.viewmodel
     api root_dependencies.livedata
@@ -43,7 +42,6 @@ dependencies {
     api root_dependencies.material
     api root_dependencies.retrofit
     api root_dependencies.converter_gson
-    api root_dependencies.gson
     api root_dependencies.logging_interceptor
     api root_dependencies.live_event_bus
     api root_dependencies.utilcodex
