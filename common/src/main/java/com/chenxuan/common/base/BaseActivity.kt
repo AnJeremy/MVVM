@@ -1,8 +1,8 @@
 package com.chenxuan.common.base
 
-import android.util.Log
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
+import com.blankj.utilcode.util.ToastUtils
 import com.chenxuan.common.utils.dialog.DialogHelper
 import kotlinx.coroutines.launch
 
@@ -23,23 +23,27 @@ abstract class BaseActivity<V : BaseRepository, T : BaseViewModel<V>> : BaseSimp
         viewModel.statusLiveData.observe(this, Observer { status ->
             status?.run {
                 when (this) {
-                    CoroutineState.START -> {//协程开始
-                        Log.d("coroutine", "开始")
+                    CoroutineState.START -> {
+                        //协程开始
                     }
-                    CoroutineState.REFRESH -> {//协程开始&&进度菊花圈
-                        Log.d("coroutine", "刷新")
+                    CoroutineState.REFRESH -> {
+                        //协程开始&&进度对话框
                         DialogHelper.getInstance().showProgress(this@BaseActivity)
                     }
-                    CoroutineState.FINISH -> {//协程结束
-                        Log.d("coroutine", "结束")
+                    CoroutineState.FINISH -> {
+                        //协程结束
                         DialogHelper.getInstance().dismissProgress()
                     }
-                    CoroutineState.ERROR -> {//协程异常
-                        Log.d("coroutine", "异常")
+                    CoroutineState.ERROR -> {
+                        //协程异常
                         DialogHelper.getInstance().dismissProgress()
                     }
                 }
             }
+        })
+
+        viewModel.errorLiveData.observe(this, Observer {
+            ToastUtils.showShort(it.message)
         })
     }
 

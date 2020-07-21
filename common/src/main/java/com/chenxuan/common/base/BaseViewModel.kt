@@ -27,6 +27,10 @@ abstract class BaseViewModel<T : BaseRepository> : ViewModel() {
         MutableLiveData<CoroutineState>()
     }
 
+    val errorLiveData: MutableLiveData<Exception> by lazy {
+        MutableLiveData<Exception>()
+    }
+
     fun <T> launch(
         refresh: Boolean = true,
         netBlock: NetBlock<T>,
@@ -43,7 +47,10 @@ abstract class BaseViewModel<T : BaseRepository> : ViewModel() {
                 success(netBlock())
                 statusLiveData.value = CoroutineState.FINISH
             } catch (e: Exception) {
-                if (error == null) statusLiveData.value = CoroutineState.ERROR else error(e)
+                if (error == null) {
+                    statusLiveData.value = CoroutineState.ERROR
+                    errorLiveData.value = e
+                } else error(e)
             }
         }
     }

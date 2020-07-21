@@ -19,7 +19,7 @@ private val scheduled: ExecutorService = Executors.newScheduledThreadPool(coreSi
 /**
  * 切换到主线程
  */
-fun <T> T.ktxRunOnUi(block: T.() -> Unit) {
+fun <T> T.runOnUi(block: T.() -> Unit) {
     handler.post {
         block()
     }
@@ -28,7 +28,7 @@ fun <T> T.ktxRunOnUi(block: T.() -> Unit) {
 /**
  * 延迟delayMillis后切换到主线程
  */
-fun <T> T.ktxRunOnUiDelay(delayMillis: Long, block: T.() -> Unit) {
+fun <T> T.runOnUiDelay(delayMillis: Long, block: T.() -> Unit) {
     handler.postDelayed({
         block()
     }, delayMillis)
@@ -37,7 +37,7 @@ fun <T> T.ktxRunOnUiDelay(delayMillis: Long, block: T.() -> Unit) {
 /**
  * 子线程执行 SingleThreadPool
  */
-fun <T> T.ktxRunOnBgSingle(block: T.() -> Unit) {
+fun <T> T.runOnSinglePool(block: T.() -> Unit) {
     single.execute {
         block()
     }
@@ -46,7 +46,7 @@ fun <T> T.ktxRunOnBgSingle(block: T.() -> Unit) {
 /**
  * 子线程执行 FixedThreadPool
  */
-fun <T> T.ktxRunOnBgFix(block: T.() -> Unit) {
+fun <T> T.rRunOnFixPool(block: T.() -> Unit) {
     fix.execute {
         block()
     }
@@ -55,7 +55,7 @@ fun <T> T.ktxRunOnBgFix(block: T.() -> Unit) {
 /**
  * 子线程执行 CachedThreadPool
  */
-fun <T> T.ktxRunOnBgCache(block: T.() -> Unit) {
+fun <T> T.runOnCachePool(block: T.() -> Unit) {
     cache.execute {
         block()
     }
