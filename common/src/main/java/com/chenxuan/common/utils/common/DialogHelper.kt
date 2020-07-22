@@ -1,4 +1,4 @@
-package com.chenxuan.common.utils.dialog
+package com.chenxuan.common.utils.common
 
 import android.app.Activity
 import com.afollestad.materialdialogs.GravityEnum

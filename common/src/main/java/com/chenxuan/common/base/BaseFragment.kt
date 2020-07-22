@@ -3,7 +3,7 @@ package com.chenxuan.common.base
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import com.blankj.utilcode.util.ToastUtils
-import com.chenxuan.common.utils.dialog.DialogHelper
+import com.chenxuan.common.utils.common.DialogHelper
 import kotlinx.coroutines.launch
 
 /**

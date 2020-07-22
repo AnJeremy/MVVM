@@ -1,6 +1,6 @@
 package com.chenxuan.net
 
-import android.content.Context
+import com.blankj.utilcode.util.PathUtils
 import com.orhanobut.logger.Logger
 import okhttp3.Cache
 import okhttp3.Interceptor
@@ -28,8 +28,8 @@ class Api private constructor() {
 
     lateinit var retrofit: Retrofit
 
-    fun init(context: Context) {
-        initRetrofit(initOkHttpClient(context))
+    fun init() {
+        initRetrofit(initOkHttpClient())
     }
 
     /**
@@ -46,8 +46,8 @@ class Api private constructor() {
     /**
      * 初始化OkHttp
      */
-    private fun initOkHttpClient(context: Context): OkHttpClient {
-        val cache = Cache(File(CacheUtils.getCacheDir(context), "HttpCache"), 1024 * 1024 * 80)
+    private fun initOkHttpClient(): OkHttpClient {
+        val cache = Cache(File(PathUtils.getExternalAppCachePath(), "HttpCache"), 1024 * 1024 * 80)
         val interceptor = HttpLoggingInterceptor()
         interceptor.level = HttpLoggingInterceptor.Level.BODY
         return OkHttpClient.Builder()
