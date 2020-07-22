@@ -29,5 +29,4 @@ object DialogUtils {
         materialDialog?.dismiss()
         materialDialog = null
     }
-
 }

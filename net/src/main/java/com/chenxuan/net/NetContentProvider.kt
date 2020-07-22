@@ -7,9 +7,7 @@ import com.chenxuan.common.base.BaseContentProvider
  */
 class NetContentProvider : BaseContentProvider() {
     override fun onCreate(): Boolean {
-        context?.run {
-            Api.getInstance().init()
-        }
+        Api.init()
         return true
     }
 }

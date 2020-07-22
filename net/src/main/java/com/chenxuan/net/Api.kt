@@ -16,15 +16,8 @@ import java.util.concurrent.TimeUnit
 /**
  * @author cx
  */
-class Api private constructor() {
-    companion object {
-        fun getInstance() = Helper.instance
-        const val HOST = "https://www.wanandroid.com"
-    }
-
-    private object Helper {
-        val instance = Api()
-    }
+object Api {
+    private const val HOST = "https://www.wanandroid.com"
 
     lateinit var retrofit: Retrofit
 

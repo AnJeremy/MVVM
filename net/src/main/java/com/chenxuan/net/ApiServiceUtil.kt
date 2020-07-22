@@ -14,7 +14,7 @@ object ApiServiceUtil {
         return if (map.containsKey(type)) {
             map[type] as T
         } else {
-            val temp = Api.getInstance().retrofit.create(type)
+            val temp = Api.retrofit.create(type)
             map[type] = temp
             temp
         }
