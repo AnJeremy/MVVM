@@ -24,7 +24,7 @@ abstract class BaseSimpleActivity : AppCompatActivity() {
         }
     }
 
-    open fun initViewModel(){
+    open fun initViewModel() {
 
     }
 

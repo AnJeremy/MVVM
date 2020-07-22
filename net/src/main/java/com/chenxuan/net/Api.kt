@@ -70,18 +70,12 @@ class Api private constructor() {
         } else {
             Logger.d("request.body() == null")
         }
-        //打印url信息
         val response = it.proceed(request)
-        //获得返回的body，注意此处不要使用responseBody.string()获取返回数据，原因在于这个方法会消耗返回结果的数据(buffer)
         val responseBody = response.body
-        //为了不消耗buffer，我们这里使用source先获得buffer对象，然后clone()后使用
         val source = responseBody!!.source()
         source.request(Long.MAX_VALUE) // Buffer the entire body.
-        //获得返回的数据
         val buffer = source.buffer
-        //使用前clone()下，避免直接消耗
         Logger.json(buffer.clone().readString(Charset.forName("UTF-8")))
-
         response
     }
 }

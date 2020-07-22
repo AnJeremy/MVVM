@@ -30,7 +30,7 @@ abstract class BaseSimpleFragment : Fragment() {
         initData(savedInstanceState)
     }
 
-    open fun initViewModel(){
+    open fun initViewModel() {
 
     }
 

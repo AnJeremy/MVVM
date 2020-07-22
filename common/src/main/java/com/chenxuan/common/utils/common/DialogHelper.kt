@@ -9,8 +9,7 @@ import com.afollestad.materialdialogs.MaterialDialog
  */
 class DialogHelper {
     companion object {
-        fun getInstance() =
-            Helper.instance
+        fun getInstance() = Helper.instance
     }
 
     private object Helper {
