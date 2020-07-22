@@ -7,29 +7,11 @@ import com.afollestad.materialdialogs.MaterialDialog
 /**
  * @author cx
  */
-class DialogHelper {
-    companion object {
-        fun getInstance() = Helper.instance
-    }
-
-    private object Helper {
-        val instance = DialogHelper()
-    }
-
+object DialogUtils {
     private var materialDialog: MaterialDialog? = null
-    private var mIsFinish: Boolean = false
 
     fun showProgress(activity: Activity, msg: String = "请稍候...") {
-        mIsFinish = !activity.isFinishing
-        if (mIsFinish) {
-            if (materialDialog == null) {
-                showProgressDialog(activity, msg)
-            } else {
-                if (!materialDialog!!.isShowing) {
-                    showProgressDialog(activity, msg)
-                }
-            }
-        }
+        showProgressDialog(activity, msg)
     }
 
     private fun showProgressDialog(activity: Activity, msg: String) {
@@ -44,8 +26,8 @@ class DialogHelper {
     }
 
     fun dismissProgress() {
-        if (mIsFinish) {
-            materialDialog?.dismiss()
-        }
+        materialDialog?.dismiss()
+        materialDialog = null
     }
+
 }
