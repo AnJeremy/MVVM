@@ -40,7 +40,7 @@ dependencies {
     api root_dependencies.work_manager
     api root_dependencies.work_manager_ktx
     api root_dependencies.constraintlayout
-    api root_dependencies.recycleview
+    api root_dependencies.recyclerview
     api root_dependencies.material
     api root_dependencies.retrofit
     api root_dependencies.converter_gson
