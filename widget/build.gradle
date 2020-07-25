@@ -1,8 +1,8 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
 
 def root_android = rootProject.ext.android
+def root_dependencies = rootProject.ext.dependencies
 
 android {
     compileSdkVersion root_android.compileSdkVersion
@@ -24,7 +24,5 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    api project(path: ':base')
-    api project(path: ':bean')
-    api project(path: ':widget')
+    implementation root_dependencies.kotlin
 }

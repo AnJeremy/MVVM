@@ -6,6 +6,7 @@
 
         <activity android:name=".ui.LoginActivity" />
         <activity android:name=".ui.ScanActivity" />
+        <activity android:name=".ui.WidgetActivity" />
     </application>
 
 </manifest>

@@ -2,7 +2,7 @@ package com.chenxuan.common.base
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.chenxuan.common.R
+import com.gyf.immersionbar.BarHide
 import com.gyf.immersionbar.ktx.immersionBar
 
 /**
@@ -20,7 +20,9 @@ abstract class BaseSimpleActivity : AppCompatActivity() {
 
     private fun initImmersionBar() {
         immersionBar {
-            barColor(R.color.colorPrimary)
+            transparentStatusBar()
+            statusBarDarkFont(true)
+            hideBar(BarHide.FLAG_HIDE_NAVIGATION_BAR)
         }
     }
 
