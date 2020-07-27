@@ -10,6 +10,9 @@ import android.widget.EditText
 import android.widget.RelativeLayout
 import android.widget.TextView
 
+/**
+ * @author cx
+ */
 class VerificationCodeView @JvmOverloads constructor(
     context: Context?,
     attributeSet: AttributeSet? = null,

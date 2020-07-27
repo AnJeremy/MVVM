@@ -4,6 +4,9 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.ViewGroup
 
+/**
+ * @author cx
+ */
 class FlowLayout @JvmOverloads constructor(
     context: Context?,
     attributeSet: AttributeSet? = null,

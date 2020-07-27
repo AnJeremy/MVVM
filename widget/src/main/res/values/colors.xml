@@ -4,4 +4,5 @@
     <color name="textBlack">#333333</color>
     <color name="gray_1A000000">#1A000000</color>
     <color name="blue_266EFF">#266EFF</color>
+    <color name="split">#1A000000</color>
 </resources>
