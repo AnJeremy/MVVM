@@ -8,14 +8,14 @@ import com.chenxuan.common.utils.router.RouterPath
 import com.chenxuan.login.R
 import com.google.zxing.client.result.ParsedResultType
 import com.mylhyl.zxing.scanner.ScannerOptions
-import kotlinx.android.synthetic.main.activity_scan.*
+import kotlinx.android.synthetic.main.login_activity_scan.*
 
 /**
  * @author cx
  */
 @Route(path = RouterPath.LOGIN_SCAN)
 class ScanActivity : BaseSimpleActivity() {
-    override fun getContentView() = R.layout.activity_scan
+    override fun getContentView() = R.layout.login_activity_scan
 
     override fun initData(savedInstanceState: Bundle?) {
     }

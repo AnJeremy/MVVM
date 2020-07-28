@@ -11,7 +11,7 @@ import com.chenxuan.login.R
  */
 @Route(path = RouterPath.LOGIN_WIDGET)
 class WidgetActivity : BaseSimpleActivity() {
-    override fun getContentView() = R.layout.activity_widget
+    override fun getContentView() = R.layout.login_activity_widget
 
     override fun initData(savedInstanceState: Bundle?) {
     }

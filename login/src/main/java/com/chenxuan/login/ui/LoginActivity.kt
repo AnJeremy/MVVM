@@ -10,7 +10,7 @@ import com.chenxuan.common.utils.router.RouterPath
 import com.chenxuan.login.R
 import com.chenxuan.login.repository.LoginRepository
 import com.chenxuan.login.viewmodel.LoginViewModel
-import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.android.synthetic.main.login_activity_login.*
 
 /**
  * @author cx
@@ -19,7 +19,7 @@ import kotlinx.android.synthetic.main.activity_login.*
 class LoginActivity : BaseActivity<LoginRepository, LoginViewModel>() {
     override fun createViewModel() = ViewModelProvider(this)[LoginViewModel::class.java]
 
-    override fun getContentView() = R.layout.activity_login
+    override fun getContentView() = R.layout.login_activity_login
 
     override fun initData(savedInstanceState: Bundle?) {
     }

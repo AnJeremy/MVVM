@@ -54,7 +54,6 @@ class CustomToolbar @JvmOverloads constructor(
         title.setTextColor(contentColor)
         feature.text = featureText
         feature.setTextColor(featureTextColor)
-        feature.visibility = if (featureText.isNullOrEmpty()) View.GONE else View.VISIBLE
         icon.visibility = if (iconVisible) View.VISIBLE else View.GONE
         split.visibility = if (splitVisible) View.VISIBLE else View.GONE
 
@@ -96,7 +95,6 @@ class CustomToolbar @JvmOverloads constructor(
 
     fun setFeatureText(text: String): CustomToolbar {
         feature.text = text
-        feature.visibility = if (text.isEmpty()) View.GONE else View.VISIBLE
         return this
     }
 
