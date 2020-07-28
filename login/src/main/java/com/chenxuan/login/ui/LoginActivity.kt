@@ -25,20 +25,12 @@ class LoginActivity : BaseActivity<LoginRepository, LoginViewModel>() {
     }
 
     override fun initView(savedInstanceState: Bundle?) {
-        initToolbar()
-
         viewModel.contentLiveData.observe(this, Observer<String> { content ->
             tvLogin.text = content
         })
 
         tvLogin.setSingleClick {
             viewModel.getChapters()
-        }
-    }
-
-    private fun initToolbar() {
-        loginToolbar.backListener {
-            finish()
         }
     }
 }

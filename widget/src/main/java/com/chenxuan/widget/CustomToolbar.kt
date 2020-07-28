@@ -1,5 +1,6 @@
 package com.chenxuan.widget
 
+import android.app.Activity
 import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
@@ -58,7 +59,11 @@ class CustomToolbar @JvmOverloads constructor(
         split.visibility = if (splitVisible) View.VISIBLE else View.GONE
 
         back.setOnClickListener {
-            backListener?.invoke()
+            if (backListener == null) {
+                (context as Activity).finish()
+            } else {
+                backListener?.invoke()
+            }
         }
         feature.setOnClickListener {
             featureListener?.invoke()
