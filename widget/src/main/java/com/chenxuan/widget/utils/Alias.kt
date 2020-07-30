@@ -1,4 +1,4 @@
-package com.chenxuan.widget
+package com.chenxuan.widget.utils
 
 /**
  * @author cx

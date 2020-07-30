@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
+import com.chenxuan.widget.utils.Callback
 
 /**
  * @author cx
