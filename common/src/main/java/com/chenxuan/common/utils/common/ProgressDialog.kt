@@ -7,7 +7,7 @@ import com.afollestad.materialdialogs.MaterialDialog
 /**
  * @author cx
  */
-object DialogUtils {
+object ProgressDialog {
     private var materialDialog: MaterialDialog? = null
 
     fun showProgress(activity: Activity, msg: String = "请稍候...") {

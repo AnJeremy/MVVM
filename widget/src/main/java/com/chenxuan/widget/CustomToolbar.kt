@@ -23,7 +23,7 @@ class CustomToolbar @JvmOverloads constructor(
     private var title: TextView
     private var feature: TextView
     private var icon: ImageView
-    private var split: View
+    private var separate: View
     private var backListener: Callback? = null
     private var featureListener: Callback? = null
     private var iconListener: Callback? = null
@@ -33,7 +33,7 @@ class CustomToolbar @JvmOverloads constructor(
         title = view.findViewById(R.id.toolbarContent)
         feature = view.findViewById(R.id.toolbarFeature)
         icon = view.findViewById(R.id.toolbarIcon)
-        split = view.findViewById(R.id.toolbarSplit)
+        separate = view.findViewById(R.id.toolbarSeparate)
 
         val typedArray = context.obtainStyledAttributes(attributeSet, R.styleable.CustomToolbar)
         val content = typedArray.getString(R.styleable.CustomToolbar_barContent)
@@ -47,7 +47,7 @@ class CustomToolbar @JvmOverloads constructor(
             context.resources.getColor(R.color.blue_266EFF)
         )
         val iconVisible = typedArray.getBoolean(R.styleable.CustomToolbar_barIcon, false)
-        val splitVisible = typedArray.getBoolean(R.styleable.CustomToolbar_barSplit, true)
+        val separateVisible = typedArray.getBoolean(R.styleable.CustomToolbar_barSeparate, true)
 
         typedArray.recycle()
 
@@ -56,7 +56,7 @@ class CustomToolbar @JvmOverloads constructor(
         feature.text = featureText
         feature.setTextColor(featureTextColor)
         icon.visibility = if (iconVisible) View.VISIBLE else View.GONE
-        split.visibility = if (splitVisible) View.VISIBLE else View.GONE
+        separate.visibility = if (separateVisible) View.VISIBLE else View.GONE
 
         back.setOnClickListener {
             if (backListener == null) {
@@ -113,8 +113,8 @@ class CustomToolbar @JvmOverloads constructor(
         return this
     }
 
-    fun setSplitVisible(boolean: Boolean): CustomToolbar {
-        split.visibility = if (boolean) View.VISIBLE else View.GONE
+    fun setSeparateVisible(boolean: Boolean): CustomToolbar {
+        separate.visibility = if (boolean) View.VISIBLE else View.GONE
         return this
     }
 }

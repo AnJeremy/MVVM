@@ -46,9 +46,9 @@
         android:src="@drawable/toolbar_menu" />
 
     <View
-        android:id="@+id/toolbarSplit"
+        android:id="@+id/toolbarSeparate"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:layout_alignParentBottom="true"
-        android:background="@color/split" />
+        android:background="@color/separate" />
 </RelativeLayout>

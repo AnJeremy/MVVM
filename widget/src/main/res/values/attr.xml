@@ -6,6 +6,6 @@
         <attr name="featureText" format="string" />
         <attr name="featureTextColor" format="color" />
         <attr name="barIcon" format="boolean" />
-        <attr name="barSplit" format="boolean" />
+        <attr name="barSeparate" format="boolean" />
     </declare-styleable>
 </resources>

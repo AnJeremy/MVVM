@@ -3,7 +3,7 @@ package com.chenxuan.common.base
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import com.blankj.utilcode.util.ToastUtils
-import com.chenxuan.common.utils.common.DialogUtils
+import com.chenxuan.common.utils.common.ProgressDialog
 import kotlinx.coroutines.launch
 
 /**
@@ -28,15 +28,15 @@ abstract class BaseActivity<V : BaseRepository, T : BaseViewModel<V>> : BaseSimp
                     }
                     CoroutineState.REFRESH -> {
                         //协程开始&&进度对话框
-                        DialogUtils.showProgress(this@BaseActivity)
+                        ProgressDialog.showProgress(this@BaseActivity)
                     }
                     CoroutineState.FINISH -> {
                         //协程结束
-                        DialogUtils.dismissProgress()
+                        ProgressDialog.dismissProgress()
                     }
                     CoroutineState.ERROR -> {
                         //协程异常
-                        DialogUtils.dismissProgress()
+                        ProgressDialog.dismissProgress()
                     }
                 }
             }
