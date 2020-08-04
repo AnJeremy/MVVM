@@ -59,7 +59,6 @@ dependencies {
     api root_dependencies.immersionbar_ktx
     api root_dependencies.recyclerview_adapter
     api root_dependencies.permissions
-    api root_dependencies.matisse
     debugApi root_dependencies.leakcanary
     api root_dependencies.multidex
     api root_dependencies.zxing
